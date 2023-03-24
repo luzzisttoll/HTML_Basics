@@ -28,10 +28,9 @@ function getPassword() {
     myother = document.getElementById("sonder").checked;
 
     var rc="";
-    for (var idx = 1; idx < mylength; idx++){
+    for (var idx = 0; idx < mylength; idx++){
         rc += getRandomChar(mynumber, mylower, myUpper, myother);
     }
 
     document.getElementById("passwordfield").value = rc;
-
 }
