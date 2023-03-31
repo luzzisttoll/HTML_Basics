@@ -1,0 +1,9 @@
+*{
+    margin: 10px;
+}
+
+.task{
+    border-style: solid;
+    
+    width: 300px;
+}
