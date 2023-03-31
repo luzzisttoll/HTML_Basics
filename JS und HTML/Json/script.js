@@ -1,18 +1,26 @@
 let data= [
-    {firstname:"Hans", lastName:"Huber", points:30},
-    {firstname:"Paul", lastName:"Müööer", points:34},
-    {firstname:"Franz", lastName:"Maier", points:35},
-]
+    {firstName:"Hans", lastName:"Huber", points:30},
+    {firstName:"Paul", lastName:"Müööer", points:34},
+    {firstName:"Franz", lastName:"Maier", points:35},
+];
 
+ 
+for (let index = 0; index < data.length; index++){
+    const element = data[index];
+    console.log(element.firstName)
+}
+
+data.forEach(element => {
+    console.log(element.firstName)
+})
 
 function loadPeople(){
-    let html ="";
-    
+    let html = "";
     data.forEach(element => {
-        html += "<div>" + element.firstname + " " + element.lastName + "</div>" 
+        html += "<div>" + element.firstName + " " + element.lastName + "</div>"
     });
-
-    document.getElementById("content").innerHTML=html;
+    document.getElementById("content").innerHTML = html;
+    console.log(html);
 }
 
 loadPeople();
