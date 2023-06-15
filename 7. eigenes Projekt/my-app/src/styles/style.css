@@ -1,0 +1,32 @@
+.background-container {
+  background-image: url("../img/gym.png");
+  background-size: cover;
+  background-position: center;
+  height: 80vh; /* Höhe des Bildschirms */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: inset;
+  border-radius: 1%;
+}
+
+.text-container {
+  position: relative;
+  text-align: center;
+  transition: top 10s ease;;
+}
+  
+.text-container.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(116, 114, 114, 0.8);
+  padding: 20px;
+}
+
+.text-container.fixed h1,
+.text-container.fixed p {
+  margin: 0;
+}

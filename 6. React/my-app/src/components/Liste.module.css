@@ -1,0 +1,10 @@
+.main{
+    background-color: rgb(127, 223, 255);
+    padding: 10px;
+    margin: 3px;
+    text-align: left;
+}
+
+.main:hover{
+    background-color: rgb(98, 167, 190);
+}

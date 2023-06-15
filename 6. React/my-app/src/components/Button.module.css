@@ -1,0 +1,19 @@
+.main{
+    margin: 10px;
+}
+
+.main:hover{
+    cursor: pointer;
+}
+
+.isOn{
+    border-style: solid;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.isOff{
+    border-style: solid;
+    padding: 10px;
+    background-color: red;
+}

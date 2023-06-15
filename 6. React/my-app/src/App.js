@@ -1,15 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button';
+import Liste from './components/Liste';
 
 function App() {
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
         <Button name="Hans" age="17"/>
-        <Button name="Sepp" age="12"/>
-        <Button name="Paul" age="80"/>
-        hello
+        <Liste name="Coffee"/>
+        <Liste name="Tea"/>
+        <Liste name="Beer"/>
       </header>
     </div>
   );
