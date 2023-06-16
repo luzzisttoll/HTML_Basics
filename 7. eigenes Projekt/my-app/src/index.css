@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(199, 199, 188);
+  background-color: rgb(229, 229, 229);
 
 }
 
@@ -14,9 +14,8 @@ code {
     monospace;
 }
 
-body, html {
-  height: 100%;
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+html,
+body {
+  padding: 0;
+  margin: 0;
 }

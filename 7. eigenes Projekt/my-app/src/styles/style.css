@@ -1,32 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Roboto:wght@100;400;900&display=swap');
+
+.title{
+  -webkit-text-stroke: 2px black; /* width and color */
+  font-size: 70px;
+  font-family: 'Roboto Condensed', sans-serif; color: rgb(160, 9, 9);
+}
+
 .background-container {
   background-image: url("../img/gym.png");
   background-size: cover;
   background-position: center;
-  height: 80vh; /* Höhe des Bildschirms */
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-style: inset;
-  border-radius: 1%;
-}
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+} 
 
-.text-container {
-  position: relative;
-  text-align: center;
-  transition: top 3s ease;;
-}
-  
 .text-container.fixed {
   position: fixed;
+  text-align: center;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
-  background-color: rgba(116, 114, 114, 0.8);
   padding: 20px;
 }
 
 .text-container.fixed h1,
 .text-container.fixed p {
   margin: 0;
+} 
+
+.text{
+  margin-top: 200px;
 }
+
