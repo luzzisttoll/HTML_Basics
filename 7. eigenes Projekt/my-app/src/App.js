@@ -1,31 +1,20 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import './styles/style.css';
+import ScrollHandler from './components/Scrollhandler';
 
 const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isFixed, setIsFixed] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const newScrollPosition = window.pageYOffset;
-      setScrollPosition(newScrollPosition);
-
-      if (newScrollPosition > 100) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleScroll = (newScrollPosition) => {
+    setScrollPosition(newScrollPosition);
+  }
 
   return (
     <div>
       <div className='background-container'>
-        <div className={`text-container ${isFixed > 0 ? 'fixed' : ''}`}>
+        <ScrollHandler onScroll={handleScroll} />
+        <div className={`text-container ${scrollPosition > 50 ? 'fixed' : ''}`}>
           <h1>Die Workouthilfe</h1>
         </div>
       </div>
