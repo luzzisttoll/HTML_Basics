@@ -13,7 +13,7 @@
 .text-container {
   position: relative;
   text-align: center;
-  transition: top 10s ease;;
+  transition: top 3s ease;;
 }
   
 .text-container.fixed {
