@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Roboto:wght@100;400;900&display=swap');
 
 .title{
-  -webkit-text-stroke: 2px black; /* width and color */
+  -webkit-text-stroke: 1.5px black; /* width and color */
   font-size: 70px;
-  font-family: 'Roboto Condensed', sans-serif; color: rgb(160, 9, 9);
+  font-family: 'Roboto Condensed', sans-serif; color: white;
+  text-shadow: 7px 7px 6px rgba(0, 0, 0, 0.5);
 }
 
 .background-container {
@@ -25,15 +26,40 @@
   left: 0;
   width: 100%;
   z-index: 1;
-  padding: 20px;
 }
 
-.text-container.fixed h1,
-.text-container.fixed p {
-  margin: 0;
-} 
+.values {
+  margin-left: 30px
+}
 
 .text{
-  margin-top: 200px;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 
+.select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select {
+  appearance: none;
+  border: none;
+  padding: 10px 40px 10px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px;
+}
+
+.select-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url('../img/workout2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
