@@ -14,7 +14,7 @@ const App = () => {
     <div>
         <div className='background-container'>
           <ScrollHandler onScroll={handleScroll} />
-          <div className={`text-container ${scrollPosition > 260 ? 'fixed' : ''}`}>
+          <div className={`text-container ${scrollPosition > 270 ? 'fixed' : ''}`}>
             <div className='title'>Die Workouthilfe</div>
           </div>
         </div>
