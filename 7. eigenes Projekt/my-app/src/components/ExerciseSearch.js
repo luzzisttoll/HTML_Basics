@@ -60,31 +60,39 @@ function ExerciseSearch() {
           </select>
           <span className='select-icon'></span>
         </div>
-        {data.length > 0 ? (
-          <ul>
-            {data.map(exercise => (
-              <p key={exercise.id}>
-                <button className='popupbtnOpen' onClick={() => openPopup(exercise)}>{exercise.name}</button>
-              </p>
-            ))}
-          </ul>
-        ) : (
-          <p>Choose a muscle to display the exercises.</p>
-        )}
+
+        <div className='options'>
+          {data.length > 0 ? (
+            <div>
+              {data.map(exercise => (
+                <p key={exercise.id}>
+                  <button className='popupbtnOpen' onClick={() => openPopup(exercise)}>{exercise.name}</button>
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p>Wähle einen Muskel!</p>
+
+          )}
+        </div>
       </div>
-      <div className='col-8'>
+      <div className='col-7'>
         {selectedExercise && (
           <div className='popup'>
             <div className='popup-content'>
               <h2>{selectedExercise.name}</h2>
-              <div>
-                <p><b>Typ:</b> {selectedExercise.type}</p>
-                <p><b>Muskel:</b> {selectedExercise.muscle}</p>
-                <p><b>Schwierigkeit:</b> {selectedExercise.difficulty}</p>
-                <p><b>Ausrüstung:</b> {selectedExercise.equipment}</p>
+              <div className='row'>
+                <div className='col-10'>
+                  <p><b>Typ:</b> {selectedExercise.type}</p>
+                  <p><b>Muskel:</b> {selectedExercise.muscle}</p>
+                  <p><b>Schwierigkeit:</b> {selectedExercise.difficulty}</p>
+                  <p><b>Ausrüstung:</b> {selectedExercise.equipment}</p>
+                </div>
+                <div className='col-1'>
+                  <button className='popupbtnClose' onClick={closePopup}>Schließen</button>
+                </div>
               </div>
-              <p><b>Anleitung:</b><br />{selectedExercise.instructions}</p>
-              <button className='popupbtnClose' onClick={closePopup}>Close</button>
+              <p className='Anleitung'><b>Anleitung:</b><br />{selectedExercise.instructions}</p>
             </div>
           </div>
         )}
