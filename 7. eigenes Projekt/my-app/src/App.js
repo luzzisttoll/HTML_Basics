@@ -19,7 +19,7 @@ const App = () => {
         </div>
       </div>
       <div className='values'>
-        <div className='text'>Unterhalb kann ausgewählt werden, für welchen Muskel Übungen angezeigt werden sollen. In dem <b>Filter-Menü</b>, kann nach dem Schwierigkeitslevel gefiltert werden</div>
+        <div className='text'>Unterhalb kann ausgewählt werden, für welchen Muskel Übungen angezeigt werden sollen. Für Details muss auf die Übung <b>geklickt</b> werden</div>
         <div className='search'>
           <ExerciseSearch />
         </div>
@@ -29,3 +29,4 @@ const App = () => {
 };
 
 export default App;
+

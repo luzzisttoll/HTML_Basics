@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/style.css';
 
-function App() {
+function ExerciseSearch() {
   const [data, setData] = useState([]);
-  const [selectedExerciseIsOpen, setSelectedExerciseIsOpen] = useState(null);
+  const [selectedExercise, setSelectedExercise] = useState(false);
 
   useEffect(() => {
 
@@ -28,63 +28,69 @@ function App() {
   };
 
   const openPopup = exercise => {
-    setSelectedExerciseIsOpen(exercise);
+    setSelectedExercise(exercise);
   };
 
   const closePopup = () => {
-    setSelectedExerciseIsOpen(null);
+    setSelectedExercise(false);
   };
 
   return (
-    <div>
-      <div className='select'>
-        <select className='custom-select' onChange={handleSearch} required>
-          <option selected disabled>Select Muscle...</option>
-          <option value='abdominals'>Abdominals</option>
-          <option value='abductors'>Abductors</option>
-          <option value='adductors'>Adductors</option>
-          <option value='biceps'>Biceps</option>
-          <option value='calves'>Calves</option>
-          <option value='chest'>Chest</option>
-          <option value='forearms'>Forearms</option>
-          <option value='glutes'>Glutes</option>
-          <option value='hamstrings'>Hamstrings</option>
-          <option value='lats'>Lats</option>
-          <option value='lower_back'>Lower Back</option>
-          <option value='middle_back'>Middle Back</option>
-          <option value='neck'>Neck</option>
-          <option value='quadriceps'>Quadriceps</option>
-          <option value='traps'>Traps</option>
-          <option value='triceps'>Triceps</option>
-        </select>
-        <span className='select-icon'></span>
-      </div>
-
-      {data.length > 0 ? (
-        <ul>
-          {data.map(exercise => (
-            <span key={exercise.id}>
-              <p>{exercise.name}</p>
-              <button onClick={() => openPopup(exercise)}>Open Popup</button>
-            </span>
-          ))}
-        </ul>
-      ) : (
-        <p>Choose a muscle to display the exercises.</p>
-      )}
-
-      {selectedExerciseIsOpen && (
-        <div className='popup'>
-          <div className='popup-content'>
-            <h2>{selectedExerciseIsOpen.name}</h2>
-            <p>{selectedExerciseIsOpen.type} + {selectedExerciseIsOpen.muscle} + {selectedExerciseIsOpen.difficulty}</p>
-            <p>{selectedExerciseIsOpen.instructions}</p>
-            <button onClick={closePopup}>Close</button>
-          </div>
+    <div className='row'>
+      <div className='col-4'>
+        <div className='select'>
+          <select className='custom-select' onChange={handleSearch} required>
+            <option selected disabled>Select Muscle...</option>
+            <option value='abdominals'>Abdominals</option>
+            <option value='abductors'>Abductors</option>
+            <option value='adductors'>Adductors</option>
+            <option value='biceps'>Biceps</option>
+            <option value='calves'>Calves</option>
+            <option value='chest'>Chest</option>
+            <option value='forearms'>Forearms</option>
+            <option value='glutes'>Glutes</option>
+            <option value='hamstrings'>Hamstrings</option>
+            <option value='lats'>Lats</option>
+            <option value='lower_back'>Lower Back</option>
+            <option value='middle_back'>Middle Back</option>
+            <option value='neck'>Neck</option>
+            <option value='quadriceps'>Quadriceps</option>
+            <option value='traps'>Traps</option>
+            <option value='triceps'>Triceps</option>
+          </select>
+          <span className='select-icon'></span>
         </div>
-      )}
+        {data.length > 0 ? (
+          <ul>
+            {data.map(exercise => (
+              <p key={exercise.id}>
+                <button className='popupbtnOpen' onClick={() => openPopup(exercise)}>{exercise.name}</button>
+              </p>
+            ))}
+          </ul>
+        ) : (
+          <p>Choose a muscle to display the exercises.</p>
+        )}
+      </div>
+      <div className='col-8'>
+        {selectedExercise && (
+          <div className='popup'>
+            <div className='popup-content'>
+              <h2>{selectedExercise.name}</h2>
+              <div>
+                <p><b>Typ:</b> {selectedExercise.type}</p>
+                <p><b>Muskel:</b> {selectedExercise.muscle}</p>
+                <p><b>Schwierigkeit:</b> {selectedExercise.difficulty}</p>
+                <p><b>Ausrüstung:</b> {selectedExercise.equipment}</p>
+              </div>
+              <p><b>Anleitung:</b><br />{selectedExercise.instructions}</p>
+              <button className='popupbtnClose' onClick={closePopup}>Close</button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-export default App;
+export default ExerciseSearch;
