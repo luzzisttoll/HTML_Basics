@@ -42,7 +42,7 @@ function ExerciseSearch() {
           <select className='custom-select' onChange={handleSearch} required>
             <option selected disabled>Select Muscle...</option>
             <option value='abdominals'>Abdominals</option>
-            <option value='abductors'>Abductors</option>
+            <option value='abductors'>Abductors</option>json
             <option value='adductors'>Adductors</option>
             <option value='biceps'>Biceps</option>
             <option value='calves'>Calves</option>
